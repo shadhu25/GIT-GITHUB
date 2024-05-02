@@ -1,0 +1,52 @@
+git init  -> initialization of current folder as git local repository
+git config --global user.name "krishn"
+git config --global user.email "krishn@gmail.com"
+git config --global core.editor "code --wait"  -> will change code editor software in our case the editor is vs-code
+********************************************************************
+git status  -> show the current state of the repo
+git add file.txt  -> add the given file to staging area
+git add .  -> add all file to staging area
+********************************************************************
+git commit  -> commit(save) the all files in staging area without giving any commit message
+git commit -m "commit message" -> commit(save) the all files in
+staging area and giving a commit message
+git commit -am  "direct commit"-> direct commit without adding in staging area 
+********************************************************************
+git log  -> show the details of all commit ID that are made yet
+git log --oneline  -> show all the commit ID in line by line
+********************************************************************
+git branch   -> show the all branches
+git branch footer  -> creat a branch
+git branch -M main  -> rename the given branch to specified words
+git branch -d footer  -> delete the given branch 
+********************************************************************
+git checkout footer  -> change the current branch to given branch 
+git switch footer  -> change the current branch to given branch 
+git checkout -b footer  -> create  the given branch  and change the current branch to newly branch 
+git switch -c footer  -> create  the given branch  and change the current branch to newly branch
+git checkout HEAD~2  -> HEAD will point 2 commit back
+ current branch to newly branch
+********************************************************************
+git marge footer  -> marge the given branch into current working branch
+********************************************************************
+git diff  -> show the all changes on all files made in the current branch 
+git diff index.html  -> show the all changes made in the given file
+git diff df45dejg gt45fbu65-> show the all changes made in all the files of the both given version
+********************************************************************
+git stash  -> temporary save the changes without commiting them and allow to switch into another branch 
+git stash pop  -> retrieve the changes that temporary save by [git stash] command in the current branch 
+git stash list  -> show all the stashe ID along with branch made by different branches 
+git stash apply stash@{0} ->  retrieve the changes of the given stash in the current branch 
+********************************************************************
+git reflog  -> kept you your previous commit(state)
+git rebase  master -> will append  the all versions of current branch in the specified branch 
+********************************************************************
+git remote -v  -> show all remote url directory
+git remote add origin https://github.com/shadhu25/Dummy.git  -> add the specified remote directory
+git remote rename origin super  -> rename the remote directory
+git remote remove super  -> delete the given remote directory
+********************************************************************
+git push -u origin main  -> push the main branch to remote repository(origin)
+git clone https://github.com/shadhu25/Dummy.git  -> coppy all the file present in the given remote repo to local repo.
+git fetch origin  -> only fetch not copy the files of given remote reop name
+git pull origin main  -> copy the files of given remote reop name to given local banch
