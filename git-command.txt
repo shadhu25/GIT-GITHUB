@@ -2,6 +2,7 @@ git init  -> initialization of current folder as git local repository
 git config --global user.name "krishn"
 git config --global user.email "krishn@gmail.com"
 git config --global core.editor "code --wait"  -> will change code editor software in our case the editor is vs-code
+git config --list  -> show the data of git configuration file
 ********************************************************************
 git status  -> show the current state of the repo
 git add file.txt  -> add the given file to staging area
@@ -14,6 +15,16 @@ git commit -am  "direct commit"-> direct commit without adding in staging area
 ********************************************************************
 git log  -> show the details of all commit ID that are made yet
 git log --oneline  -> show all the commit ID in line by line
+********************************************************************
+git reset  -> undu all the file present in staging area into working area 
+git reset index.html -> undu the given file in staging area into working area 
+git reset ed5hd6g  -> bring all changes to given commit ID and file still exists 
+git reset --hard ed5hd6g  -> bring all changes to given commit ID and also delete all files
+git reset HEAD~2  -> bring all changes to back 2 commit ID and file still exists
+git reset --hard HEAD~2  -> bring all changes to back 2 commit ID and also delete all files
+********************************************************************
+git revert ed5hd6g  -> bring all changes to given commit ID with a  new commit ID
+git revert HEAD~2  -> bring all changes to back 2 commit ID with a  new commit ID
 ********************************************************************
 git branch   -> show the all branches
 git branch footer  -> creat a branch
