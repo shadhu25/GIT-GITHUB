@@ -1,0 +1,403 @@
+                   command-1 : ls(list sub-directories)
+
+ls -> list all directries and files of current directory expcept hedden
+
+ls [dir-path] -> list all directries and files of given directory expcept hedden {ls /shadhu/Download/photo/}
+                                                                                  
+ls ~ -> list all directries and files of current user home directory expcept hedden
+
+ls .. -> list all directries and files of parent directory of current directry expcept hedden
+
+ls -l or ll  -> list all directries and files of current directory in long formate expcept hedden
+
+ls -a -> list all directries and files of current directory including hedden
+
+ls -al -> list all directries and files of current directory in long formate including hedden
+
+ls -S -> list all directries and files of current directory sorted in size expcept hedden
+
+ls -lS -> list all directries and files of current directory sorted in size and long formate expcept hedden
+
+ls [dir-path/*.file-extention] -> list all files with given file-extention of given dir-path {ls /Home/Document/*.html}
+
+ls -l > [file name] -> save the list provided by ls-command in given file of current directory
+
+ls -d -> list only directries of current directory
+
+ls -d */ -> list only all directories of current directory 
+
+ls -A -> list almost all directries and files of current directory do not list implied . and ..
+
+ls -c -> list all directries and files of current directory sorted by date expcept hedden
+
+ls -C -> list entries by columns
+
+ls -g -> like -l, but do not list owner
+
+ls -h -> with -l and -s, print sizes like 1K 234M 2G etc.
+
+ls -o -> like -l, but do not list group information
+
+ls -r -> reverse order while sorting
+
+ls -R -> list subdirectories recursively
+
+ls -t -> sort by time, newest first
+
+ls -X -> sort alphabetically by entry extension
+
+ls -x -> list entries by lines instead of by columns
+
+                   command-2 : cd(change directories)
+                   
+cd or cd ~ -> go to home directory
+
+cd .. -> go to parent directory of the current directory
+
+cd [dir-path] -> go to the given directory {cd /shadhu/Download/photo/}
+
+cd "dir-name with wite-space" -> go to directory which contain white-space (also singile cote) {cd "my book"}
+
+                   command-3 : cat
+
+cat -> echo whatever we give input
+
+cat [file-name] -> open the given file {cat text.txt}
+ 
+cat [file-name1 file-name2 ...] -> open all the given files in combined {cat file1.txt file2.txt}  
+
+cat -b [file-name] -> open file with line number only on non-empty lines {cat -b file.txt}
+
+cat -n [file-name] -> open file with line numbe on all lines {cat -n file.txt}
+
+cat -s [file-name] -> open file where containing more one empty line ti escape all line and print only one empty line {cat -n text.txt}
+
+cat -E [file-name] -> add doller simbol at end of each line {cat -E text.txt}
+
+cat > [file-name] -> open a new file for writing and press ctr+d for saving {cat > text.txt}
+
+cat >> [existing-file-name] -> appends the file {cat >> text.txt}
+
+cat [file1-name file2-name ...] > [new-file-name] -> combines the file1 and file2 data into the new file {cat text1.txt text2.txt > hello.txt}
+
+cat [file2-name] >> [file2-name] -> append the data of file1 into file2 {cat text1.txt >> text2.txt}
+
+                   command-4 : mkdir(make directory)
+                   
+mkdir [dir-name] -> creates a directory {mkdir shadhu}
+
+mkdir [existing-parent-name/new-child-name] -> creates the child directory of the existing directory {mkdit shadhu/krishn}
+
+mkdir -p [new-parent-name/new-child-name] -> creates the parent and its child dirctory {mkdir -p shadhu/krishn}
+
+mkdir -p [existing-parent-name/{new-child1,new-child2,new-child3 ...} -> creates all the child directory of the existing directory {mkdir -p shadhu/{krishn,saurabh,anjali,sunil,rubi}
+
+                   command-5 : rm and rmmdir(remove directory)
+                   
+rmdir [dir-name] -> removes the directory {rmdir shadhu}
+
+rmdir -p [dir-name/dir-name/dir-name] -> if all directory are empty then remove all directories {rmdir -p shadhu/krishn/photo}
+
+rmdir -pv [dir-name/dir-name/dir-name] -> if all directory are empty then remove all directories and give some more details {rmdir -pv shadhu/krishn/photo}
+
+rm -rv [parent-dir-name/dir-name/dir-name] or [parent-dir-name] -> remove all directory without checking any directory has a file or not and give some more details {rm -rv shadhu/krishn/photo or shadhu/}
+
+                   command-6 : cp(copy)
+                   
+cp [existing-file1-name new-or-existing-file2-name] -> copies the existing file data into a new or existing file {cp text1.txt text2.txt}
+
+cp [existing-file1-name existing-file2-name ... existing-or-new-dir-name] -> copies the all files into the given directory {cp text1.txt text2.txt shadhu}
+
+cp -i [existing-file1-name existing-file2-name ... existing-or-new-dir-name] -> copies the all files into the given directory and if anyone of them file is alredy exist in the destination directotry it will ask to user for overwrite {cp -i text1.txt text2.txt shadhu}
+
+cp -R [existing-dir-name new-dir-name] -> copies only the content of the existing directory into the new directry {cp -R krishn shadhu} 
+
+cp -R [existing-dir-name existing-dir-name] -> copies the existing directory into the another existing directory {cp -R krishn shadhu}
+
+                   command-7 : mv(move)
+                   
+mv [file1-name file2-name] -> move the data of file1 into file2 and also used to rename a file {mv text1.txt text2.txt}
+
+mv [file1-name file2-name file3-name ... dir-name] -> move the all files into the directory {mv text1.txt text2.txt text3.txt shadhu}
+
+mv -i [file1-name file2-name file3-name ... dir-name] -> move all the file into the directory if anyone of them file is alredy exist in the destination directotry it will ask to user for overwrite {mv -i text1.txt text2.txt text3.txt shadhu}
+
+mv [existing-dir1-name existing-dir2-name] -> move the directory1 into directory2 {mv krishn shadhu}
+
+mv [existing-dir1-name new-dir2-name] -> move the data of directory1 into directory2 and also used to rename a directory {mv krishn krishnkant}
+
+                   command-8 : less
+                   
+less [file-name] -> it will open the file and show the top data of the file {less text.txt}
+
+pressing 'up' and 'down' arrow key to see line by line data of the file
+
+pressing 'space' key to see page by page to upward of the file
+
+pressing 'b' key to see page by page to downward of the file
+
+pressing 'G' going end of the file 
+
+pressing 'g' going begining of the file 
+
+for searching some word from up to down press '/book' then go to the next book press 'n'
+
+for searching some word from down to up press '?book' then go to the next book press 'n'
+
+for exiting the less command press 'q'
+
+                   command-9 : touch
+                   
+touch [file-name] -> creates a empty file {touch text.txt}
+
+touch [existing-file-name] -> updating the time stamp of the given file {touch text.txt}
+
+                   command-10 : top
+                   
+top -> list of all precesses that are currently rinning on the PC
+
+pressing 's' will change the time delay fo refresing
+
+presing 'i' will give some process that are cnsuming more cpu, memory
+
+pressing 'k' will the process of psid given
+
+                   command-11 : kill
+                   
+kill [pid] -> it kill the process of given pid {kill 3856}
+
+pidof [process-name] -> finding the pid of the given process 
+
+kill -KILL [pid] -> forcefull kill the processes {kill -KILL 7657}
+
+kill -9 [pid] -> forcefull kill the processes {kill -9 7657}
+
+ps -ux -> like kill command
+
+ps -U [user-name] -> list all running process by given user name {ps -U shadhu}
+
+ps -C [process-name] -> list the related processes of given keword { ps -C chrome}
+
+                   command-12 : chmod(file permission
+                   
+o=others  g=group  u=user ||  w=write  x=excution  r=read
+                   
+chmod [user-types][+ or -][permition-type] [file-name] -> give permition for users on the file or directory {chmod oug+x text.txt}
+
+chmod a[+ or -][permition-type] [file-name] -> give permition for all users on the file or directory {chmod a+x text.txt}
+
+{chmod u+rw,g=rw,o+r text.txt}
+
+     r=4  w=2  x=1
+     
+chmod [value] [file-name] -> give permition for users on the file or directory {chmod 701 text.txt}
+
+                   command-13 : bash scripting
+                   
+create a file name myscript.sh with file extention .sh
+
+then write these commands
+
+#!/bin/bash
+
+ls
+STRING = "hello world"
+echo $STRING
+which bash
+
+
+them save the filea
+
+and run it ./myscript.sh  press enter
+
+                   command-14 : which
+                   
+which [keyword] ->  this will give some imformation about given keybord like its path {which cat}
+
+whatis [keyword] -> this will give short description about given keyword {whatis cat}
+
+                   command-15 : useradd(create user)
+                   
+useradd [user-name] -> creates a user with name which is given by user
+
+useradd  -m [user-name] -> creates a user with name which is given by user and create a default home directory for given  new-user {useradd krishn}
+
+useradd [user-name] -s [shall-path] -> creates a user with name which is given by user and allowing to use shall {useradd krishn -s /bin/bash}
+
+useradd [user-name] -g [existing-group] -> creates a user with name which is given by user and asign this user with a existing group {useradd krishn -g shadhu}
+
+useradd [user-name] -c ["user-comment"] -> creates a user with name which is given by user and give a comment about the user {useradd krishn -c " i am new-user here for coding work"}
+
+                   command-16 : userdel(delete user)
+                   
+userdel [user-name] -> delete the given user {userdel krishn}
+
+userdel -r [user-name] -> delete the given user and delete all the data of the user {userdel -r krishn}
+
+                   command-17 : groupadd(create group)
+                   
+groups -> list all the groups that are connected to the current user {groups krishn}
+
+cat /etc/group -> list all the groups are existing 
+
+groupadd [group-name] -> create a group {groupadd shadhu}
+
+groupdel [group-name] -> delete a group {groupdel shadhu}
+
+gpasswd -a [user-name] [group-name] -> adding user to the group {gpasswd -a krishn shadhu}
+
+gpasswd -d [user-name] [group-name] -> deleting user from the group {gpasswd -d krishn shadhu}
+
+                   command-18 : watch
+                   
+watch [other-command] -> it will refresh the  given command repeatadly {watch df -h}
+
+watch -n [sec] [other-command] -> it will refresh the  given command repeatadly and changes the repearing time interval {watch -n 5 df -h}
+
+                   command-19 : head
+                   
+head [file-name] -> print first 10 lines data of the file {head text.txt}
+
+head -[n] [file-name] -> print first n lines data of the file {head -5 text.txt}
+
+head -f [file-name] -> print first 10 lines data of the file and also update it {head -f text.txt}
+
+                   command-20 : tail
+                   
+tail [file-name] -> print last 10 lines data of the file {tail text.txt}
+
+tail -[n] [file-name] -> print last n lines data of the file {tail -5 text.txt}
+
+head -f [file-name] -> print last 10 lines data of the file and also update it {head -f text.txt}
+
+                   command-21 : find
+                   
+find [existing-dir-name] -name [file-name] -> find the given file in the given directory and gives its absolute path {find /shadhu/krishn -name text.txt}
+
+find [existing-dir-name] -name [file-name-without-extention] -> find the given file which has unknown file extention in the given directory and gives its absolute path {find /shadhu/krishn -name text.*}
+
+find [existing-dir-name] -name [only-extention-of-the-file] -> find the unknown file in the given directory {find /shadhu/krishn -name *.txt}
+
+find [existing-dir-name] -name [starting-latters-file-name] -> find the given file which has some starting letters in the given directory {find /shadhu/krishn -name text1*}
+
+find [existing-dir-name] -mtime -[day] -> list the all files that are created specified days ago {find /shadhu/krishn -mtime -2}
+
+                   command-22 : wc(word count)
+                   
+wc [file-name] -> list total no. of lines,words, and charectors in the file {wc text.txt}
+
+wc -c [file-name] -> list total no. of charectors in the file {wc -c text.txt}
+
+wc -l [file-name] -> list total no. of lines in the file {wc -l text.txt}
+
+wc -w [file-name] -> list total no. of words in the file {wc -w text.txt}
+
+wc -L [file-name] -> list total no. of charectors of longest line in the file {wc -L text.txt}
+
+                   command-23 : cal(calender)
+                   
+cal -> print the current month
+
+ncal -> it will transpose the output of the of cal command
+
+cal [year] -> print all months of the given year {cal 2016}
+
+cal [month-num] [year] -> print the month of the given year {cal 4 2016}
+
+cal -3 -> print previous, current, and next months of the current year
+
+                   command-24 : date
+                   
+date -> print the current date
+
+date -s ["m/d/y h:m:s"] -> set the given date {date -s "11/20/2003 12:48:00"}
+
+date +%d%h%y -> print date in specified formate {output= 04jan17}
+
+date "+%d-%h-%y" -> print date in specified formate {output= 04-jan-17}
+
+date "+%d/%h/%y" -> print date in specified formate {output= 04/an/17}
+
+date "+DATE: %m/%d/%y%nTIME: %H:%M:%S" -> print date in specified formate
+
+output: DATE: 01/04/17
+	TIME: 22:25:13
+
+                   command-25 : combining multiple commands(; && ||)
+                   
+[command1] ; [command2] ; [command3] -> it will exicute all command regardless of if any command failed
+
+[command1] && [command2] && [command3] -> it will not exicute command after if any command failed
+
+[command1] || [commands2] -> it will act like operator OR(execute only one command)
+
+                   command-26 : apt-get
+                   
+apt-get update -> it will update all pakages that are required for updation
+
+apt-get upgrade -> it will upgrade all pakages that are required for upgradation
+
+apt-get install [pakage-name] -> inatall the given pakage {apt-get install python5}
+
+apt-get remove [pakage-name] -> uninatall the given pakage not its configration files {apt-get remove python5}
+
+apt-get remove --purge [pakage-name] -> uninatall the given pakage and remove its configration files {apt-get --purge remove python5} 
+
+apt-get autoremove -> remove which file that are not used for ling time
+
+                   command-27 : ifconfig 
+                   
+ifconfig -> print the all system configration of the PC
+
+ifconfig [ethernet-interface-name] -> print information about given ethernet interface {ifconfig eth0}
+
+ifconfig [ethernet-interface-name] down -> it will disconnect the ethernet connection(offline) {ifconfig eth0 down}
+
+ifconfig [ethernet-interface-name] down -> it will connect the ethernet connection(online) {ifconfig eth0 up}
+
+                   command-28 : tar
+                   
+tar -cvf [tar-file-name] [existing-file-name] -> create a tar file with name specified of given existing file {tar -cvf krishn.tar krishhn}
+
+tar -xvf [tar-file-name] -> extract the given tar file {tar -xvf krishn.tar}
+
+tar -czvf [tar-zip-file-name] [existing-file-name] -> create a tar zip file with name specified of given existing file {tar -czvf krishn.tar.gz krishhn}
+
+tar -xzvf [tar-zip-file-name] -> extract the given tar file {tar -xzvf krishn.tar.gz}
+
+                   command-29 : grep
+                   
+grep ["keyword"] [file-name] -> give all the line that are cantaing that keyword in the file {grep "option" text.txt}
+
+grep -i ["keyword"] [file-name] -> give all the line without case-sencetive that are cantaing that keyword in the file {grep -i "option" text.txt}
+
+grep -n ["keyword"] [file-name] -> give all the line with line number that are cantaing that keyword in the file {grep -n "option" text.txt}
+
+grep ["keyword"] [file-name3 file-name2 file-name1 ...] -> give all the line that are cantaing that keyword in all the files {grep "option" text.txt}
+
+grep -v ["keyword"] [file-name] -> give all the line that are not cantaing that keyword in the file {grep -v "option" text.txt}
+
+                   command-30 : other commands
+                   
+netstat -ie -> like ifconfig
+
+pwd -> print present working directory absolute path
+
+clear -> clear the terminal
+
+nano [file-name] -> create the file and give a interactive text editor
+
+sudo su -> getting a root-user or super-user
+
+echo "keyword" -> whatever you type in double-cots it will back to you
+
+df -> gives how much memery-space is used in disk and how much memery-space is available
+
+du [file or folder-name] -> give how mush space is used by the given folder or file {du text.txt}
+
+du -s -> give summeried used space
+
+free -> df -> gives how much memery-space is used in RAM and how much memery-space is available currently
+
+[package name] -version or -v -> print the current version of the give package
+
