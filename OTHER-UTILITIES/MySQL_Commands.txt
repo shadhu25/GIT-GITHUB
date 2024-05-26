@@ -1,0 +1,98 @@
+CREATE DATABASE krishn;  create a database
+CREATE DATABASE IF NOT EXISTS krishn;  create a database if not exist 
+USE krishn;  use the specified database
+SHOW DATABASES;  display all available databases
+SHOW TABLES;  display all tables of current database
+DROP DATABASE krishn;  delete the specified database
+DROP DATABASE IF EXISTS krishn;  delete the specified database if exists
+DROP TABLE radha;  delete the specified table
+********************************************************************
+CREATE TABLE Student (
+	ID INT PRIMARY KEY,
+	Name VARCHAR(50),
+	Age INT NOT NULL
+);  create a table
+CREATE TABLE Student (
+	ID INT,
+	Name VARCHAR(50),
+	Age INT,
+	PRIMARY KEY (ID)
+);  create a table and define constraints at end
+CREATE TABLE TEMP(
+	cust_id,
+	FOREIGN KEY (cust_id) REFERENCES customer(id)
+);  create a table and making a column AS foreign key
+CREATE TABLE emp(
+	cust_id,
+	salary FLOAT DEFAULT 25000
+);  create a table and setting default value to a column
+CREATE TABLE emp(
+	cust_id,
+	age INT CHECK age >= 18
+);  create table and applying CHECK constraints
+CREATE TABLE TEMP(
+	cust_id,
+	FOREIGN KEY (cust_id) REFERENCES customer(id)
+	ON UPDATE CASCADE
+	ON DELETE CASCADE
+);  create a table and making a column as foreign key also applying cascading
+********************************************************************
+SELECT * FROM Student; display all rows from Student table
+SELECT city FROM student;
+SELECT DISTINCT city FROM student;
+SELECT * FROM student WHERE city = "mumbai" AND mark > 80;
+SELECT * FROM student WHERE city = "mumbai" OR mark > 80;
+SELECT * FROM student WHERE mark BETWEEN 80 AND 90;
+SELECT * FROM student WHERE city IN ("mumbai","delhi");
+SELECT * FROM student WHERE city NOT IN ("mumbai","delhi");
+SELECT * FROM student LIMIT 3;
+SELECT * FROM student WHERE mark >90 LIMIT 3;
+SELECT * FROM student ORDER BY mark DESC;
+SELECT MAX(mark) FROM student;
+SELECT MIN(mark) FROM student;
+SELECT AVG(mark) FROM student;
+SELECT COUNT(rollno) FROM student;
+SELECT SUM(mark) FROM student WHERE mark > 90;
+SELECT city, AVG(mark) FROM student GROUP BY city;
+SELECT city FROM student GROUP BY city HAVING AVG(mark) > 60;
+SELECT city FROM student WHERE grade = "A" GROUP BY city HAVING MAX(mark)>90 ORDER BY city DESC;
+********************************************************************
+INSERT INTO Student VALUES (103,"Sudama",107);  insert single row in specified table
+INSERT INTO Student (ID) VALUES (103);  insert single(column no. can be increased) column in specified table
+INSERT INTO Student 
+(ID,Name,Age)
+VALUES
+(101,"krishn",101),
+(102,"Radha",101),
+(103,"Sudama",107);  insert multiple rows in specified table
+********************************************************************
+UPDATE student SET mark=mark+1;
+UPDATE student SET grade="O" WHERE grade="A";
+********************************************************************
+DELETE FROM student WHERE MARKS < 33;
+DELETE FROM student;  delete all data of the specified table
+********************************************************************
+ALTER TABLE student RENAME TO new_student; rename the table
+ALTER TABLE student ADD COLUMN age INT;  add a column to schema
+ALTER TABLE student DROP COLUMN age;  delete a column to schema
+ALTER TABLE student MODIFY id FLOAT PRIMARY KEY;  change data type and constraints
+ALTER TABLE student CHANGE COLUMN age salary FLOAT NOT NULL;  rename the specified column and change datatype and constraints
+********************************************************************
+TRUNCATE TABLE student;
+********************************************************************
+SELECT name FROM student INNER JOIN course ON student.name=course.c_name;  inner join
+SELECT name FROM student LEFT JOIN course ON student.name=course.c_name;  left outer join
+SELECT name FROM student RIGHT JOIN course ON student.name=course.c_name;  right outer join
+SELECT name FROM student AS a LEFT JOIN course AS b ON a.id=b.c_id UNION SELECT name FROM student AS a RIGHT JOIN course AS b ON a.id=b.c_id;  full outer join
+SELECT name FROM student AS a LEFT JOIN course AS b ON a.id=b.c_id WHERE b.id IS NULL; left exclusive join
+SELECT name FROM student AS a RIGHT JOIN course AS b ON a.id=b.c_id WHERE a.id IS NULL; right exclusive join
+SELECT name FROM student AS a LEFT JOIN course AS b ON a.id=b.c_id WHERE b.id IS NULL UNION SELECT name FROM student AS a RIGHT JOIN course AS b ON a.id=b.c_id WHERE a.id IS NULL; full exclusive join
+SELECT a.name AS manager_name, b.name FROM employee AS a JOIN employee AS b ON a.id=b.manager_id;  self join
+********************************************************************
+SELECT name, mark FROM student WHERE mark > (SELECT AVG(mark) FROM student);
+SELECT name FROM student WHERE rollno IN (SELECT rollno FROM student WHERE rollno % 2 = 0);
+SELECT MAX(mark) FROM (SELECT * FROM student city = "delhi") AS temp;
+SELECT (SELECT MAX(mark) FROM student), name FROM student;
+********************************************************************
+CREATE VIEW v1 AS SELECT rollno, name FROM student;
+SELECT * FROM v1;
